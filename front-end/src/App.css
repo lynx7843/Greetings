@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #f0f0f0;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background-color: #0a0a0a;
+}
+
+.App-header {
+  background-color: transparent;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #f0f0f0;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+  filter: drop-shadow(0 0 18px rgba(224, 26, 26, 0.35));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-link {
+  color: #e01a1a;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.App-link:hover {
+  color: #ff4444;
+  text-shadow: 0 0 12px rgba(224, 26, 26, 0.35);
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #0a0a0a;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 60px,
+      rgba(224, 26, 26, 0.04) 60px,
+      rgba(224, 26, 26, 0.04) 61px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 60px,
+      rgba(224, 26, 26, 0.04) 60px,
+      rgba(224, 26, 26, 0.04) 61px
+    );
+  padding: 2rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  background-color: #141414;
+  border: 1px solid #2a2a2a;
+  border-radius: 16px;
+  padding: 3rem 2.5rem;
+  width: 100%;
+  max-width: 520px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(224, 26, 26, 0.08);
+}
+
+h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  letter-spacing: 0.08em;
+  color: #f0f0f0;
+  text-transform: uppercase;
+  line-height: 1;
+  position: relative;
+  text-align: center;
+}
+
+h1::after {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 3px;
+  background: #e01a1a;
+  margin: 0.4rem auto 0;
+  box-shadow: 0 0 10px rgba(224, 26, 26, 0.5);
+}
+
+p {
+  font-size: 0.95rem;
+  color: #888888;
+  letter-spacing: 0.06em;
+  text-align: center;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+input[type="text"] {
+  background: #1c1c1c;
+  border: 1px solid #2a2a2a;
+  border-bottom: 2px solid #e01a1a;
+  border-radius: 8px 8px 0 0;
+  color: #f0f0f0;
+  font-family: 'Barlow', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  padding: 0.9rem 1.4rem;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+input[type="text"]::placeholder {
+  color: #444444;
+  letter-spacing: 0.08em;
+}
+
+input[type="text"]:focus {
+  border-color: #2a2a2a;
+  border-bottom-color: #e01a1a;
+  background: #111111;
+  box-shadow: 0 4px 20px rgba(224, 26, 26, 0.2);
+}
+
+button {
+  background: #e01a1a;
+  border: none;
+  border-radius: 8px;
+  color: #f0f0f0;
+  cursor: pointer;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+  padding: 0.9rem 0;
+  width: 100%;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.06);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+button:hover {
+  background: #c01515;
+  box-shadow: 0 0 24px rgba(224, 26, 26, 0.4), 0 4px 16px rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+button:hover::before {
+  opacity: 1;
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 0 10px rgba(224, 26, 26, 0.3);
+}
